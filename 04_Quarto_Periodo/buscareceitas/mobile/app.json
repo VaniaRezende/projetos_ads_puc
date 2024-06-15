@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "BuscaReceitas",
+    "slug": "BuscaReceitas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "image":"./assets/splash.png",
+      "backgroundColor": "#48744c"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#182E3A"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/logo.png"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+header {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    background-color: yellow;
+}
+
+footer {
+    background-color: yellow ;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+label {
+    font-weight: bolder;
+}
+
+::placeholder {
+    color: lightskyblue !important;
+    opacity: 3;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:  lightskyblue !important;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:  lightskyblue !important;
+    opacity:  3;
+}
+
+h1 {
+     text-align: center;
+}
+
+#msg {
+     height: 60px;
+}
+
+#grid-contatos tbody {
+     cursor: pointer;
+}
+
+html {
+    font-family: sem serifa;
+}
+
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa{
+  font-size: 2.5em
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}

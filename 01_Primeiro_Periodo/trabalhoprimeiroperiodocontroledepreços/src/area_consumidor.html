@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Area consumidor</title>
+    <link rel="stylesheet" href="area_consumidor.css">
+    <script src="login.js"></script>
+    <script>
+        // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+
+        function exibeUsuarios() {
+            
+            // Popula a tabela com os registros do banco de dados
+            let listaUsuarios = '';
+            for (i = 0; i < db_usuarios.usuarios.length; i++) {
+                let usuario = db_usuarios.usuarios[i];
+                listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.login}</td><td>${usuario.email}</td></tr>`;
+            }
+
+            // Substitui as linhas do corpo da tabela
+            document.getElementById("table-usuarios").innerHTML = listaUsuarios
+
+        }
+
+        function initPage() {
+
+            // Associa a função de logout ao botão
+            document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+            // Informa o nome do usuário logado
+            document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+            // Lista os usuários 
+            exibeUsuarios ();
+        }
+
+        // Associa ao evento de carga da página a função para verificar se o usuário está logado
+        window.addEventListener('load', initPage);
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img width="250" height="100" src="imgs/logo.png" alt="Logo"></a>
+                
+                <div class="introdução">
+                    <h1>Olá,<span id="nomeUsuario"> seja bem-vindo!</span></h1>
+                    <button id="btn_logout" class="btn btn-outline-danger">Efetuar Logout</button>
+                 </div>
+                    
+             
+        
+            </header>
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+
+        <main>
+            <div>
+                <h1>Área do Consumidor</h1>
+            </div>
+            <div>
+                <form id="infor-usua" class="col-sm-7">
+                    <p><label for="bname">Nome Completo: </label><input type="text" class="form-control" name="aname"
+                            id="bname" placeholder="Nome Completo"></p>
+                    <p><label for="bemail">E-mail: </label><input type="email" class="form-control" name="aemail"
+                            id="bemail" placeholder="name@example.com.br"></p>
+                    <p><label for="bcpf">CPF: </label><input type="number" class="form-control" name="acpf" id="bcpf"
+                            placeholder="CPF"></p>
+                    <p><label for="btelef">Telefone: </label><input type="number" class="form-control" name="atelef"
+                            id="btelef" placeholder="Telefone/celular"></p>
+                    <p><label for="bsenha">Senha: </label><input type="password" class="form-control" name="asenha"
+                            id="bsenha" placeholder="Senha"></p>
+                    <p><label for="bsenha">Confirme a senha:</label><input type="password" class="form-control" name="asenha"
+                                id="bsenha" placeholder="Senha"></p>        
+                    <input type="button" class="btn btn-success" id="btnInsert" value="Salvar">
+                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                    <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar">
+                </form>
+            </div>
+            <div class=Avaliar> <h3>Esqueceu de avaliar o seu ultimo posto que você abasteceu?</h3>
+                <a href="postos_localizados.html">clique aqui e avalie</a>
+            </div>
+            
+            <footer>
+                <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+            </footer>
+
+        </main>
+     
+</body>
+
+</html>
